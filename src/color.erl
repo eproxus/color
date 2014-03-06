@@ -24,14 +24,14 @@ p(IOData, Opts) ->
     {Modes, Colors} = parse(Opts),
     [<<"\e[">>, Modes, Colors, <<"m">>, IOData, ?reset].
 
-?foreground(black).
-?foreground(red).
-?foreground(green).
-?foreground(yellow).
-?foreground(blue).
-?foreground(purple).
-?foreground(cyan).
-?foreground(white).
+black(IOData)  -> p(IOData, [black]).
+red(IOData)    -> p(IOData, [red]).
+green(IOData)  -> p(IOData, [green]).
+yellow(IOData) -> p(IOData, [yellow]).
+blue(IOData)   -> p(IOData, [blue]).
+purple(IOData) -> p(IOData, [purple]).
+cyan(IOData)   -> p(IOData, [cyan]).
+white(IOData)  -> p(IOData, [white]).
 
 %--- Internal Functions -------------------------------------------------------
 
