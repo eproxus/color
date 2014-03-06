@@ -18,19 +18,42 @@
     Color(Text) -> [<<"\e[0;">>, foreground(Color), <<"m">>, Text, ?reset]
 ).
 
+-type opt() :: black | red | green | yellow | blue | purple | cyan | white |
+    light_black | light_red | light_green | light_yellow | light_blue |
+    light_purple | light_cyan | light_white | normal | bold | underline |
+    blink | inherit.
+
 %--- API ----------------------------------------------------------------------
 
+% @doc Format and color `IOData' according to `Opts'.
+-spec p(iodata(), [opt()]) -> iodata().
 p(IOData, Opts) ->
     {Modes, Colors} = parse(Opts),
     [<<"\e[">>, Modes, Colors, <<"m">>, IOData, ?reset].
 
+% @doc Color the text black.
+-spec black(iodata()) -> iodata().
 black(IOData)  -> p(IOData, [black]).
+% @doc Color the text red.
+-spec red(iodata()) -> iodata().
 red(IOData)    -> p(IOData, [red]).
+% @doc Color the text green.
+-spec green(iodata()) -> iodata().
 green(IOData)  -> p(IOData, [green]).
+% @doc Color the text yellow.
+-spec yellow(iodata()) -> iodata().
 yellow(IOData) -> p(IOData, [yellow]).
+% @doc Color the text blue.
+-spec blue(iodata()) -> iodata().
 blue(IOData)   -> p(IOData, [blue]).
+% @doc Color the text purple.
+-spec purple(iodata()) -> iodata().
 purple(IOData) -> p(IOData, [purple]).
+% @doc Color the text cyan.
+-spec cyan(iodata()) -> iodata().
 cyan(IOData)   -> p(IOData, [cyan]).
+% @doc Color the text white.
+-spec white(iodata()) -> iodata().
 white(IOData)  -> p(IOData, [white]).
 
 %--- Internal Functions -------------------------------------------------------
