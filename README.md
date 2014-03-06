@@ -3,7 +3,7 @@
 # Color #
 
 
-Shell coloring for Erlang.
+Shell ANSI coloring for Erlang.
 
 ## Usage
 
