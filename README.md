@@ -48,9 +48,9 @@ as the foreground color, and the second will be used as the background color
 Examples:
 
 * `color:p("text", [yellow])` (same as `color:yellow("text")`)
-* `color:p("text", [green, red, bold])`
-* `color:p("text", [inherit, blue])`
-* `color:p("text", [bold, underline])`
+* `color:p("text", [green, red, bold])` (bold green text on red background)
+* `color:p("text", [inherit, blue])` (normal text on blue background)
+* `color:p("text", [bold, underline])` (normal bold and underlined text)
 
 
 ## Modules ##
