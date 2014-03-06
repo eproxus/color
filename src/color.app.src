@@ -1,0 +1,5 @@
+{application, color, [
+  {description, "Shell coloring"},
+  {vsn, "0.1"},
+  {applications, [kernel, stdlib]}
+]}.
